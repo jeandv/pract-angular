@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<div id="banner" class="d-flex justify-content-center">
+  <ngb-carousel *ngIf="imagesBanner">
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="imagesBanner[0]" alt="banner-1">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="imagesBanner[1]" alt="banner-2">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="imagesBanner[2]" alt="banner-3">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="imagesBanner[3]" alt="banner-4">
+      </div>
+    </ng-template>
+    <ng-template ngbSlide>
+      <div class="picsum-img-wrapper">
+        <img [src]="imagesBanner[4]" alt="banner-5">
+      </div>
+    </ng-template>
+  </ngb-carousel>
+</div>
+
+<section id="productos" class="container mt-4">
+
+  <div style="margin-left: 5em;">
+    <h2 class="d-inline fs-6 text-uppercase text-secondary fw-light">
+      ¡las mejores ofertas de nuestras tiendas oficiales!
+    </h2>
+    <a href="#productos" class="text-decoration-none ms-2">Ver más</a>
+  </div>
+
+  <div class="d-flex justify-content-center" style="height: 400px;">
+    <mat-card class="example-card rounded m-2" *ngFor="let p of datosProductos">
+      <img class="pb-1 border-bottom" mat-card-image src={{p.imagen}} alt="producto-{{p.id}}">
+      <mat-card-content>
+        <h2 class=" m-0 fs-4 fw-normal">U$S {{p.precio}}</h2>
+        <h5 class="text-success">{{p.tipoEnvio}}</h5>
+        <p class="text-secondary">{{p.titulo}}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+</section>
